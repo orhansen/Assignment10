@@ -1,0 +1,22 @@
+﻿@*Main index view. Dynamically updated to either all the contacts, or the team selected.*@
+
+@{
+    ViewData["Title"] = "Bowling Contacts";
+}
+
+@model IndexViewModel
+
+<h2>@Model.Team</h2>
+
+@*Builds the individual contact card*@
+@foreach (var x in Model.Bowlers)
+{
+    <div class="border p-1 m-1 col-10">
+        <p><span class="font-weight-bold">Name: </span>@x.BowlerFirstName @x.BowlerMiddleInit @x.BowlerLastName</p>
+        <p><span class="font-weight-bold">Address: </span>@x.BowlerAddress, @x.BowlerCity, @x.BowlerState, @x.BowlerZip</p>
+        <p><span class="font-weight-bold">Phone: </span>@x.BowlerPhoneNumber</p>
+    </div>
+}
+
+@*Pagination tag helper*@
+<div page-info="@Model.PageNumberingInfo" page-url-teamname="@Model.Team"></div>
