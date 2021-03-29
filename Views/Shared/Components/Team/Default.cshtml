@@ -5,6 +5,6 @@
 
 @foreach (var x in Model)
 {
-    <a class="btn btn-block p-1  @(x.TeamName == ViewBag.SelectedTeam ? "btn-primary" : "btn-outline-secondary")" @*Used to highlight current team*@
+    <a class="btn btn-block p-1  @(x.TeamName == ViewBag.SelectedTeam ? "btn-primary" : "btn-outline-secondary")"
        asp-action="Index" asp-controller="Home" asp-route-teamid="@x.TeamId" asp-route-teamname="@x.TeamName">@x.TeamName</a>
 }

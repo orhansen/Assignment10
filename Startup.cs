@@ -51,7 +51,8 @@ namespace Assignment10
 
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints => //Custom endpoints to handel the what information is passed into the URL and how that can be searched
+            //Custom endpoints to handel the what information is passed into the URL and how that can be searched
+            app.UseEndpoints(endpoints => 
             {
                 endpoints.MapControllerRoute("teampagenum",
                     "Team/{teamid}/{teamname}/{pagenum}",
